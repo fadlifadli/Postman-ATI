@@ -1,0 +1,336 @@
+{
+	"info": {
+		"_postman_id": "9d5dc262-e936-492b-8177-19ed49b1b630",
+		"name": "1S Sabre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API-Airshopping JSON",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "agent-code",
+						"value": "ZEE",
+						"type": "text"
+					},
+					{
+						"key": "secret-key",
+						"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+						"type": "text"
+					},
+					{
+						"key": "action-code",
+						"value": "tasdf",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "b68b3dbb5361136fa811be55c3704977",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"IATA_AirShoppingRQ\": {\n        \"MessageDoc\": {\n            \"Name\": \"NDC\",\n            \"RefVersionNumber\": 18.2\n        },\n        \"Party\": {\n            \"Sender\": {\n                \"TravelAgency\": {\n                    \"AgencyID\": \"123\",\n                    \"IATANumber\": \"05602656\",\n                    \"Name\": \"ATI US\",\n                    \"PseudoCityID\": \"PCC\",\n                    \"TravelAgent\": {\n                        \"TravelAgentID\": \"128-21-0\"\n                    },\n                    \"TypeCode\": \"OnlineTravelAgency\"\n                }\n            }\n        },\n        \"PointOfSale\": {\n            \"AgentDutyText\": \"Ticketing\",\n            \"City\": {\n                \"CityName\": \"Dubai\",\n                \"IATALocationCode\": \"DXB\"\n            },\n            \"Country\": {\n                \"CountryCode\": \"AE\",\n                \"CountryName\": \"United Arab Emirates\"\n            },\n            \"Device\": {\n                \"DeviceCode\": \"94.200.55.38\"\n            },\n            \"RequestTime\": \"2021-01-21T20:30:00\"\n        },\n        \"Request\": {\n            \"FlightCriteria\": {\n                \"OriginDestCriteria\": [\n                    {\n                        \"OriginDepCriteria\": {\n                            \"IATALocationCode\": \"BOS\",\n                            \"Date\": \"2021-04-02\"\n                        },\n                        \"DestArrivalCriteria\": {\n                            \"IATALocationCode\": \"JFK\"\n                        }\n                    },\n                    {\n                        \"OriginDepCriteria\": {\n                            \"IATALocationCode\": \"JFK\",\n                            \"Date\": \"2021-04-02\"\n                        },\n                        \"DestArrivalCriteria\": {\n                            \"IATALocationCode\": \"BOS\"\n                        }\n                    }\n                ]\n            },\n            \"Paxs\": {\n                \"Pax\": [\n                    {\n                        \"PaxID\": \"PAX1\",\n                        \"PTC\": \"ADT\"\n                    },\n                    {\n                        \"PaxID\": \"PAX2\",\n                        \"PTC\": \"INF\"\n                    }\n                ]\n            },\n            \"ResponseParameters\": {\n                \"CurParameter\": [\n                    {\n                        \"RequestedCurCode\": \"GBP\"\n                    }\n                ],\n                \"PricingParameter\": {\n                    \"SimplePricingInd\": true\n                }\n            },\n            \"ShoppingCriteria\": {\n                \"CabinTypeCriteria\": [\n                    {\n                        \"CabinTypeName\": \"Economy\",\n                        \"CabinTypeCode\": \"Y\"\n                    }\n                ],\n                \"CarrierCriteria\": [\n                    {\n                        \"Carrier\": {\n                            \"AirlineDesigCode\": \"\"\n                        }\n                    }\n                ],\n                \"OwnerCode\": \"\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fcuat.tpconnects.online/Aggregator182_Interceptor/lite-service/airShop",
+					"protocol": "https",
+					"host": [
+						"fcuat",
+						"tpconnects",
+						"online"
+					],
+					"path": [
+						"Aggregator182_Interceptor",
+						"lite-service",
+						"airShop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API-Offerprice JSON",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "agent-code",
+						"value": "ZEE",
+						"type": "text"
+					},
+					{
+						"key": "secret-key",
+						"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+						"type": "text"
+					},
+					{
+						"key": "action-code",
+						"value": "tasdf",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "b68b3dbb5361136fa811be55c3704977",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"IATA_AirShoppingRQ\": {\n        \"MessageDoc\": {\n            \"Name\": \"NDC\",\n            \"RefVersionNumber\": 18.2\n        },\n        \"Party\": {\n            \"Sender\": {\n                \"TravelAgency\": {\n                    \"AgencyID\": \"123\",\n                    \"IATANumber\": 91254553,\n                    \"Name\": \"ATI UK\",\n                    \"PseudoCityID\": \"PCC\",\n                    \"TravelAgent\": {\n                        \"TravelAgentID\": \"128-21-0\"\n                    },\n                    \"TypeCode\": \"OnlineTravelAgency\"\n                }\n            }\n        },\n        \"PointOfSale\": {\n            \"AgentDutyText\": \"Ticketing\",\n            \"City\": {\n                \"CityName\": \"Dubai\",\n                \"IATALocationCode\": \"DXB\"\n            },\n            \"Country\": {\n                \"CountryCode\": \"AE\",\n                \"CountryName\": \"United Arab Emirates\"\n            },\n            \"Device\": {\n                \"DeviceCode\": \"94.200.55.38\"\n            },\n            \"RequestTime\": \"2021-01-21T20:30:00\"\n        },\n        \"Request\": {\n            \"FlightCriteria\": {\n                \"OriginDestCriteria\": [\n                    {\n                        \"OriginDepCriteria\": {\n                            \"IATALocationCode\": \"LON\",\n                            \"Date\": \"2021-05-10\"\n                        },\n                        \"DestArrivalCriteria\": {\n                            \"IATALocationCode\": \"LAX\"\n                        }\n                    },\n                    {\n                        \"OriginDepCriteria\": {\n                            \"IATALocationCode\": \"SFO\",\n                            \"Date\": \"2021-05-11\"\n                        },\n                        \"DestArrivalCriteria\": {\n                            \"IATALocationCode\": \"LON\"\n                        }\n                    }\n                ]\n            },\n            \"Paxs\": {\n                \"Pax\": [\n                    {\n                        \"PaxID\": \"PAX1\",\n                        \"PTC\": \"ADT\"\n                    },\n                    {\n                        \"PaxID\": \"PAX2\",\n                        \"PTC\": \"ADT\"\n                    },\n                    {\n                        \"PaxID\": \"PAX3\",\n                        \"PTC\": \"CHD\"\n                    },\n                    {\n                        \"PaxID\": \"PAX4\",\n                        \"PTC\": \"INF\"\n                    }\n                ]\n            },\n            \"ResponseParameters\": {\n                \"CurParameter\": [\n                    {\n                        \"RequestedCurCode\": \"GBP\"\n                    }\n                ],\n                \"PricingParameter\": {\n                    \"SimplePricingInd\": true\n                }\n            },\n            \"ShoppingCriteria\": {\n                \"CabinTypeCriteria\": [\n                    {\n                        \"CabinTypeName\": \"PREMIUM ECONOMY\",\n                        \"CabinTypeCode\": \"W\"\n                    }\n                ],\n                \"CarrierCriteria\": [\n                    {\n                        \"Carrier\": {\n                            \"AirlineDesigCode\": \"VS\"\n                        }\n                    }\n                ]\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://fcapi.tpconnects.online/rest/airShop",
+					"protocol": "https",
+					"host": [
+						"fcapi",
+						"tpconnects",
+						"online"
+					],
+					"path": [
+						"rest",
+						"airShop"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API-OrderCreate JSON",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "agent-code",
+						"type": "text",
+						"value": "ZEE"
+					},
+					{
+						"key": "secret-key",
+						"type": "text",
+						"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6"
+					},
+					{
+						"key": "action-code",
+						"type": "text",
+						"value": "tasdf"
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "b68b3dbb5361136fa811be55c3704977"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"IATA_OrderCreateRQ\": {\n        \"MessageDoc\": {\n            \"Name\": \"NDC\",\n            \"RefVersionNumber\": 18.2\n        },\n        \"PayloadAttributes\": {\n            \"EchoTokenText\": \"1bc462cb-d68d-4aed-abd0-0b61a3f248d1\",\n            \"VersionNumber\": 18.2\n        },\n        \"PointOfSale\": {\n            \"Device\": {\n                \"IPAddressText\": \"104.20.51.99\"\n            }\n        },\n        \"Party\": {\n            \"Participant\": [\n                {\n                    \"TravelAgency\": [\n                        {\n                            \"AgencyID\": 59436,\n                            \"IATANumber\": \"91254553\",\n                            \"Name\": \"ATI UK\",\n                            \"PseudoCityID\": \"PCC\",\n                            \"TravelAgent\": {\n                                \"TravelAgentID\": \"274\"\n                            }\n                        }\n                    ]\n                }\n            ],\n            \"Sender\": {\n                \"EnabledSystem\": {\n                    \"SystemID\": \"NDC\"\n                },\n                \"TravelAgency\": {\n                    \"Name\": \"Adora\"\n                }\n            }\n        },\n        \"Request\": {\n            \"CreateOrder\": {\n                \"SelectedOffer\": [\n                    {\n                        \"OfferRefID\": \"OF-ae3b1a6b-309e-4eb0-aecd-a79e31906b65\",\n                        \"OwnerCode\": \"BA\",\n                        \"SelectedOfferItem\": [\n                            {\n                                \"OfferItemRefID\": \"OF-ae3b1a6b-309e-4eb0-aecd-a79e31906b65-OI-1\",\n                                \"PaxRefID\": [\n                                    \"PAX1\",\"PAX2\"\n                                ]\n                            },\n                            {\n                                \"OfferItemRefID\": \"OF-ae3b1a6b-309e-4eb0-aecd-a79e31906b65-OI-2\",\n                                \"PaxRefID\": [\n                                    \"PAX3\"\n                                ]\n                            },\n                            {\n                                \"OfferItemRefID\": \"OF-ae3b1a6b-309e-4eb0-aecd-a79e31906b65-OI-3\",\n                                \"PaxRefID\": [\n                                    \"PAX4\"\n                                ]\n                            }\n                        ],\n                        \"ShoppingResponseRefID\": \"ac2.tx-pl-84c059f3-54b4-4c40-8f47-a2b9d02d527a\",\n                        \"TotalOfferPriceAmount\": {\n                            \"value\": 4891.04,\n                            \"CurCode\": \"GBP\"\n                        }\n                    }\n                ]\n            },\n            \"DataLists\": {\n                \"ContactInfoList\": {\n                    \"ContactInfo\": [\n                        {\n                            \"ContactInfoID\": \"CNCT-1\",\n                            \"ContactTypeText\": \"Primary\",\n                            \"EmailAddress\": [\n                                {\n                                    \"EmailAddressText\": \"max@power.com\",\n                                    \"LabelText\": \"Personal\"\n                                }\n                            ],\n                            \"Phone\": [\n                                {\n                                    \"AreaCodeNumber\": \"925\",\n                                    \"CountryDialingCode\": \"7\",\n                                    \"LabelText\": \"Mobile\",\n                                    \"PhoneNumber\": \"5315123\"\n                                }\n                            ]\n                        }\n                    ]\n                },\n                \"PaxList\": {\n                    \"Pax\": [\n                        {\n                            \"Birthdate\": \"1998-01-02\",\n                            \"CitizenshipCountryCode\": \"US\",\n                            \"ContactInfoRefID\": \"CNCT-1\",\n                            \"Individual\": {\n                                \"GenderCode\": \"M\",\n                                \"GivenName\": [\n                                    \"Max\"\n                                ],\n                                \"IndividualID\": \"1\",\n                                \"Surname\": \"Power\",\n                                \"TitleName\": \"Mr\"\n                            },\n                            \"PaxID\": \"PAX1\",\n                            \"PTC\": \"ADT\",\n                            \"ResidenceCountryCode\": \"US\"\n                        },\n                        {\n                            \"Birthdate\": \"2005-01-02\",\n                            \"CitizenshipCountryCode\": \"US\",\n                            \"ContactInfoRefID\": \"CNCT-1\",\n                            \"Individual\": {\n                                \"GenderCode\": \"M\",\n                                \"GivenName\": [\n                                    \"Maxal\"\n                                ],\n                                \"IndividualID\": \"1\",\n                                \"Surname\": \"Power\",\n                                \"TitleName\": \"Mrs\"\n                            },\n                            \"PaxID\": \"PAX2\",\n                            \"PTC\": \"ADT\",\n                            \"ResidenceCountryCode\": \"US\"\n                        },\n                        {\n                            \"Birthdate\": \"2010-01-02\",\n                            \"CitizenshipCountryCode\": \"US\",\n                            \"ContactInfoRefID\": \"CNCT-1\",\n                            \"Individual\": {\n                                \"GenderCode\": \"M\",\n                                \"GivenName\": [\n                                    \"Xal\"\n                                ],\n                                \"IndividualID\": \"1\",\n                                \"Surname\": \"Power\",\n                                \"TitleName\": \"Mrs\"\n                            },\n                            \"PaxID\": \"PAX3\",\n                            \"PTC\": \"CHD\",\n                            \"ResidenceCountryCode\": \"US\"\n                        },\n                        {\n                            \"Birthdate\": \"2020-01-02\",\n                            \"CitizenshipCountryCode\": \"US\",\n                            \"ContactInfoRefID\": \"CNCT-1\",\n                            \"Individual\": {\n                                \"GenderCode\": \"M\",\n                                \"GivenName\": [\n                                    \"Maxil\"\n                                ],\n                                \"IndividualID\": \"1\",\n                                \"Surname\": \"Power\",\n                                \"TitleName\": \"Mrs\"\n                            },\n                            \"PaxID\": \"PAX4\",\n                            \"PTC\": \"INF\",\n                            \"ResidenceCountryCode\": \"US\"\n                        }\n                    ]\n                }\n            },\n            \"OrderCreateParameters\": {\n                \"Remark\": [\n                    {\n                        \"DisplayInd\": \"true\",\n                        \"RemarkText\": \"USD\"\n                    }\n                ]\n            },\n            \"PaymentInfo\": [\n                {\n                    \"Amount\": {\n                        \"value\":  4891.04,\n                        \"CurCode\": \"GBP\"\n                    }\n                }\n            ]\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ecs-uat-britishairways-337375479.eu-central-1.elb.amazonaws.com/BA-services/orderCreate",
+					"protocol": "http",
+					"host": [
+						"ecs-uat-britishairways-337375479",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"BA-services",
+						"orderCreate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API-Airshopping XML",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "agent-code",
+						"value": "ZEE",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "secret-key",
+						"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "action-code",
+						"value": "tasdf",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "api-key",
+						"value": "b68b3dbb5361136fa811be55c3704977",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\" xmlns:iata=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_AirShoppingRQ\">\n    <soapenv:Header>\n        <head:SecurityHeader>\n            <agent>ZEE</agent>\n            <apiKey>b68b3dbb5361136fa811be55c3704977</apiKey>\n            <secretKey>bbae366e-743e-4f42-9a56-f9d08c4533d6</secretKey>\n        </head:SecurityHeader>\n    </soapenv:Header>\n    <soapenv:Body>\n        <iata:IATA_AirShoppingRQ>\n            <iata:MessageDoc>\n                <iata:Name>NDC</iata:Name>\n                <iata:RefVersionNumber>18.2</iata:RefVersionNumber>\n            </iata:MessageDoc>\n            <iata:PointOfSale>\n                <iata:Device>\n                    <iata:DeviceCode>94.200.55.38</iata:DeviceCode>\n                </iata:Device>\n                <iata:RequestTime>2021-01-20T19:15:38</iata:RequestTime>\n            </iata:PointOfSale>\n            <iata:Party>\n                <iata:Sender>\n                    <iata:TravelAgency>\n                        <iata:AgencyID>0</iata:AgencyID>\n                        <iata:TypeCode>OnlineTravelAgency</iata:TypeCode>\n                        <iata:IATANumber>05602656</iata:IATANumber>\n                        <iata:Name>ATI US</iata:Name>\n                        <iata:PseudoCityID>PCC</iata:PseudoCityID>\n                        <iata:TravelAgent>\n                            <iata:TravelAgentID>128-21-0</iata:TravelAgentID>\n                        </iata:TravelAgent>\n                    </iata:TravelAgency>\n                </iata:Sender>\n            </iata:Party>\n            <iata:PayloadAttributes>\n                <iata:VersionNumber>18.2</iata:VersionNumber>\n                <iata:EchoTokenText>cb6ac596-3f4a-4b1f-ac3f-bd4b01e3bda4</iata:EchoTokenText>\n            </iata:PayloadAttributes>\n            <iata:Request>\n                <iata:FlightCriteria>\n                    <iata:OriginDestCriteria>\n                        <iata:DestArrivalCriteria>\n                            <iata:IATALocationCode>MAN</iata:IATALocationCode>\n                        </iata:DestArrivalCriteria>\n                        <iata:OriginDepCriteria>\n                            <iata:Date>2021-06-20</iata:Date>\n                            <iata:IATALocationCode>LHR</iata:IATALocationCode>\n                        </iata:OriginDepCriteria>\n                    </iata:OriginDestCriteria>\n                </iata:FlightCriteria>\n                <iata:Paxs>\n                    <iata:Pax>\n                        <iata:PaxID>PAX1</iata:PaxID>\n                        <iata:PTC>ADT</iata:PTC>\n                    </iata:Pax>\n                </iata:Paxs>\n                <iata:ShoppingCriteria>\n                    <iata:CabinTypeCriteria>\n                        <iata:CabinTypeCode>Y</iata:CabinTypeCode>\n                        <iata:CabinTypeName>Economy</iata:CabinTypeName>\n                    </iata:CabinTypeCriteria>\n                    <iata:CarrierCriteria>\n                        <iata:Carrier>\n                            <iata:AirlineDesigCode>BA</iata:AirlineDesigCode>\n                        </iata:Carrier>\n                    </iata:CarrierCriteria>\n                </iata:ShoppingCriteria>\n                <iata:ResponseParameters>\n                    <iata:CurParameter>\n                        <iata:RequestedCurCode>USD</iata:RequestedCurCode>\n                    </iata:CurParameter>\n                </iata:ResponseParameters>\n            </iata:Request>\n        </iata:IATA_AirShoppingRQ>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ecs-uat-britishairways-337375479.eu-central-1.elb.amazonaws.com/ndcairline/service",
+					"protocol": "http",
+					"host": [
+						"ecs-uat-britishairways-337375479",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"ndcairline",
+						"service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API-OfferPrice XML",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "agent-code",
+						"type": "text",
+						"value": "ZEE",
+						"disabled": true
+					},
+					{
+						"key": "secret-key",
+						"type": "text",
+						"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+						"disabled": true
+					},
+					{
+						"key": "action-code",
+						"type": "text",
+						"value": "tasdf",
+						"disabled": true
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "b68b3dbb5361136fa811be55c3704977",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\">\n    <soapenv:Header>\n        <head:SecurityHeader>\n            <agent>AACTM</agent>\n            <apiKey>b68b3dbb5361136fa811be55c3704977</apiKey>\n            <secretKey>bbae366e-743e-4f42-9a56-f9d08c4533d6</secretKey>\n        </head:SecurityHeader>\n    </soapenv:Header>\n    <soapenv:Body>\n        <ns2:IATA_OfferPriceRQ xmlns:ns2=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_OfferPriceRQ\">\n            <ns2:MessageDoc>\n                <ns2:Name>NDC</ns2:Name>\n                <ns2:RefVersionNumber>18.2</ns2:RefVersionNumber>\n            </ns2:MessageDoc>\n            <ns2:PointOfSale>\n                <ns2:Device>\n                    <ns2:DeviceCode>94.200.55.38</ns2:DeviceCode>\n                </ns2:Device>\n                <ns2:RequestTime>2021-02-20T18:20:38</ns2:RequestTime>\n            </ns2:PointOfSale>\n            <ns2:Party>\n                <ns2:Sender>\n                    <ns2:TravelAgency>\n                        <ns2:AgencyID>0</ns2:AgencyID>\n                        <ns2:TypeCode>OnlineTravelAgency</ns2:TypeCode>\n                        <ns2:IATANumber>91254553</ns2:IATANumber>\n                        <ns2:Name>ATI US</ns2:Name>\n                        <ns2:PseudoCityID>PCC</ns2:PseudoCityID>\n                        <ns2:TravelAgent>\n                            <ns2:TravelAgentID>128-21-0</ns2:TravelAgentID>\n                        </ns2:TravelAgent>\n                    </ns2:TravelAgency>\n                </ns2:Sender>\n            </ns2:Party>\n            <ns2:PayloadAttributes>\n                <ns2:VersionNumber>18.2</ns2:VersionNumber>\n                <ns2:EchoTokenText>cb6ac596-3f4a-4b1f-ac3f-bd4b01e3bda5</ns2:EchoTokenText>\n            </ns2:PayloadAttributes>\n            <ns2:Request>\n                <ns2:OfferPriceParameters>\n                    <ns2:CurParameter>\n                        <ns2:AppCode>Display</ns2:AppCode>\n                        <ns2:CurCode>GBP</ns2:CurCode>\n                        <ns2:DecimalsAllowedNumber>2</ns2:DecimalsAllowedNumber>\n                    </ns2:CurParameter>\n                    <ns2:PricingParameter>\n                        <ns2:SimplePricingInd>true</ns2:SimplePricingInd>\n                    </ns2:PricingParameter>\n                </ns2:OfferPriceParameters>\n                <ns2:PricedOffer>\n                    <ns2:SelectedOffer>\n                        <ns2:OfferRefID>OF-17e6166d-5704-4cfc-b7fd-1fb8eb91ac8c</ns2:OfferRefID>\n                        <ns2:OwnerCode>BA</ns2:OwnerCode>\n                        <ns2:SelectedOfferItem>\n                            <ns2:OfferItemRefID>>OF-17e6166d-5704-4cfc-b7fd-1fb8eb91ac8c-OI-1</ns2:OfferItemRefID>\n                            <ns2:PaxRefID>PAX1</ns2:PaxRefID>\n                            <ns2:SelectedALaCarteOfferItem>\n                                <ns2:FlightAssociations>\n                                    <ns2:PaxJourneyRefID>Flight1_BA1404</ns2:PaxJourneyRefID>\n                                    <ns2:PaxJourneyRefID>Flight7_BA1325</ns2:PaxJourneyRefID>\n                                </ns2:FlightAssociations>\n                                <ns2:Qty>1</ns2:Qty>\n                            </ns2:SelectedALaCarteOfferItem>\n                        </ns2:SelectedOfferItem>                                                                      \n                        <ns2:TotalOfferPriceAmount>100.13</ns2:TotalOfferPriceAmount>\n                        <ns2:ShoppingResponseRefID>ac2.tx-pl-05a83fd0-149f-47d3-8723-d3471372df95</ns2:ShoppingResponseRefID>\n                    </ns2:SelectedOffer>\n                </ns2:PricedOffer>\n            </ns2:Request>\n        </ns2:IATA_OfferPriceRQ>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ecs-uat-britishairways-337375479.eu-central-1.elb.amazonaws.com/ndcairline/service",
+					"protocol": "http",
+					"host": [
+						"ecs-uat-britishairways-337375479",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"ndcairline",
+						"service"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API-OrderCreate XML",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "agent-code",
+						"type": "text",
+						"value": "ZEE",
+						"disabled": true
+					},
+					{
+						"key": "secret-key",
+						"type": "text",
+						"value": "bbae366e-743e-4f42-9a56-f9d08c4533d6",
+						"disabled": true
+					},
+					{
+						"key": "action-code",
+						"type": "text",
+						"value": "tasdf",
+						"disabled": true
+					},
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "b68b3dbb5361136fa811be55c3704977",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:head=\"http://tpconnects.com/security/header\">\n    <soapenv:Header>\n        <head:SecurityHeader>\n            <agent>ZEE</agent>\n            <apiKey>b68b3dbb5361136fa811be55c3704977</apiKey>\n            <secretKey>bbae366e-743e-4f42-9a56-f9d08c4533d6</secretKey>\n        </head:SecurityHeader>\n    </soapenv:Header>\n    <soapenv:Body>\n        <iata:IATA_OrderCreateRQ xmlns:iata=\"http://www.iata.org/IATA/2015/00/2018.2/IATA_OrderCreateRQ\">\n            <iata:MessageDoc>\n                <iata:Name>NDC</iata:Name>\n                <iata:RefVersionNumber>18.2</iata:RefVersionNumber>\n            </iata:MessageDoc>\n            <iata:PointOfSale>\n                <iata:Device>\n                    <iata:DeviceCode>94.200.55.38</iata:DeviceCode>\n                </iata:Device>\n                <iata:RequestTime>2021-01-22T18:45:38</iata:RequestTime>\n            </iata:PointOfSale>\n            <iata:Party>\n                <iata:Sender>\n                    <iata:TravelAgency>\n                        <iata:AgencyID>0</iata:AgencyID>\n                        <iata:TypeCode>OnlineTravelAgency</iata:TypeCode>\n                        <iata:IATANumber>05602656</iata:IATANumber>\n                        <iata:Name>ATI US</iata:Name>\n                        <iata:PseudoCityID>PCC</iata:PseudoCityID>\n                        <iata:TravelAgent>\n                            <iata:TravelAgentID>128-21-0</iata:TravelAgentID>\n                        </iata:TravelAgent>\n                    </iata:TravelAgency>\n                </iata:Sender>\n            </iata:Party>\n            <iata:PayloadAttributes>\n                <iata:VersionNumber>18.2</iata:VersionNumber>\n                <iata:EchoTokenText>6e8cebd0-9631-4d75-bb3a-b07ea6041495</iata:EchoTokenText>\n            </iata:PayloadAttributes>\n            <iata:Request>\n                <iata:CreateOrder>\n                    <iata:SelectedOffer>\n                        <iata:OfferRefID>1S-TP-1367-0</iata:OfferRefID>\n                        <iata:OwnerCode>1S</iata:OwnerCode>\n                        <iata:SelectedOfferItem>\n                            <iata:OfferItemRefID>OFFER-1S-TP-1367-0</iata:OfferItemRefID>\n                            <iata:PaxRefID>PAX1</iata:PaxRefID>\n                        </iata:SelectedOfferItem>\n                        <iata:SelectedOfferItem>\n                            <iata:OfferItemRefID>OFFER-1S-TP-1367-1</iata:OfferItemRefID>\n                            <iata:PaxRefID>PAX2</iata:PaxRefID>\n                        </iata:SelectedOfferItem>\n                        <iata:ShoppingResponseRefID>6e8cebd0-9631-4d75-bb3a-b07ea6041495</iata:ShoppingResponseRefID>\n                        <iata:TotalOfferPriceAmount CurCode=\"USD\">1408.00</iata:TotalOfferPriceAmount>\n                    </iata:SelectedOffer>\n                </iata:CreateOrder>\n                <iata:DataLists>\n                    <iata:ContactInfoList>\n                        <iata:ContactInfo>\n                            <iata:ContactInfoID>CNCT-1</iata:ContactInfoID>\n                            <iata:ContactTypeText>Primary</iata:ContactTypeText>\n                            <iata:EmailAddress>\n                                <iata:EmailAddressText>ryan_fadilla@flightcentre.com</iata:EmailAddressText>\n                                <iata:LabelText>Personal</iata:LabelText>\n                            </iata:EmailAddress>\n                            <iata:Phone>\n                                <iata:AreaCodeNumber>888</iata:AreaCodeNumber>\n                                <iata:CountryDialingCode>01</iata:CountryDialingCode>\n                                <iata:LabelText>Mobile</iata:LabelText>\n                                <iata:PhoneNumber>2221234</iata:PhoneNumber>\n                            </iata:Phone>\n                        </iata:ContactInfo>\n                    </iata:ContactInfoList>\n                    <iata:PaxList>\n                        <iata:Pax>\n                            <iata:Birthdate>1985-08-06</iata:Birthdate>\n                            <iata:CitizenshipCountryCode/>\n                             <iata:ContactInfoRefID>CNCT-1</iata:ContactInfoRefID>\n                            <iata:Individual>\n                                <iata:GivenName>Draco</iata:GivenName>\n                                <iata:IndividualID>1</iata:IndividualID>\n                                <iata:GenderCode>M</iata:GenderCode>\n                                <iata:Surname>Malfoy</iata:Surname>\n                                <iata:TitleName>Mr</iata:TitleName>\n                            </iata:Individual>\n                            <iata:PaxID>PAX1</iata:PaxID>\n                            <iata:PTC>ADT</iata:PTC>\n                            <iata:ResidenceCountryCode/>\n                            <iata:Remark>\n                                <iata:RemarkText>GST-CNCT1</iata:RemarkText>\n                            </iata:Remark>\n                        </iata:Pax>\n                        <iata:Pax>\n                            <iata:Birthdate>2021-01-01</iata:Birthdate>\n                            <iata:CitizenshipCountryCode/>\n                             <iata:ContactInfoRefID>CNCT-1</iata:ContactInfoRefID>\n                            <iata:Individual>\n                                <iata:GivenName>Hinata</iata:GivenName>\n                                <iata:IndividualID>1</iata:IndividualID>\n                                <iata:GenderCode>F</iata:GenderCode>\n                                <iata:Surname>Aozora</iata:Surname>\n                                <iata:TitleName>Mrs</iata:TitleName>\n                            </iata:Individual>\n                            <iata:PaxID>PAX2</iata:PaxID>\n                            <iata:PTC>INF</iata:PTC>\n                            <iata:ResidenceCountryCode/>\n                            <iata:Remark>\n                                <iata:RemarkText>GST-CNCT1</iata:RemarkText>\n                            </iata:Remark>\n                        </iata:Pax>\n                    </iata:PaxList>\n                </iata:DataLists>\n                <iata:OrderCreateParameters>\n                    <iata:Remark>\n                        <iata:DisplayInd>true</iata:DisplayInd>\n                        <iata:RemarkText>USD</iata:RemarkText>\n                    </iata:Remark>\n                </iata:OrderCreateParameters>\n                <iata:PaymentInfo>\n                    <iata:Amount CurCode=\"USD\">1408.00</iata:Amount>\n                </iata:PaymentInfo>\n            </iata:Request>\n        </iata:IATA_OrderCreateRQ>\n    </soapenv:Body>\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ecs-uat-britishairways-337375479.eu-central-1.elb.amazonaws.com/ndcairline/service",
+					"protocol": "http",
+					"host": [
+						"ecs-uat-britishairways-337375479",
+						"eu-central-1",
+						"elb",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"ndcairline",
+						"service"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
