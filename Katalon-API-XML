@@ -1,0 +1,73 @@
+# Automation
+
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+import groovy.xml.MarkupBuilder
+import groovy.xml.*
+import groovy.json.JsonSlurper
+import groovy.xml.XmlUtil
+import groovy.util.XmlSlurper;
+import groovy.util.XmlParser;
+
+def response1 = WS.sendRequestAndVerify(findTestObject('BA/OW-1ADT/XML/AirShopping.XML-1pax-OW', [('Dep1') : 'MAN', ('Arr1') : 'LHR', ('PTC1') : 'ADT'
+            , ('CBN') : 'Economy', ('CBT') : 'Y']))
+
+WS.verifyResponseStatusCode(response1, 200)
+
+def xmlOutput = new StringWriter()
+def parse = new XmlSlurper()
+def result1 = new XmlSlurper().parseText(response1.getResponseBodyContent())
+
+println('ResultNewRequest')
+println (XmlUtil.serialize(response1.getResponseBodyContent()))
+
+println (result1.IATA_AirShoppingRS.Response.DataLists.PaxSegmentList.PaxSegment[0].Operating.CarrierInfo.CarrierDesigCode)
+println (result1.IATA_AirShoppingRS.PayloadAttributes.EchoTokenText)
+println (result1.IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[0].OfferID)
+println (result1.IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[0].OfferItem.OfferItemID)
+println (result1.IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[1].JourneyOverview.JourneyPriceClass.PaxJourneyRefID)
+println (result1.IATA_AirShoppingRS.Response.ShoppingResponse.ShoppingResponseID)
+println (result1.IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[0].OfferItem.Price.TotalAmount)
+println (result1.IATA_AirShoppingRS.Response.DataLists.PaxSegmentList.PaxSegment[0].MarketingCarrierInfo.CarrierDesigCode)
+
+println (result1.IATA_AirShoppingRS.Response.DataLists.PaxSegmentList.PaxSegment[2].PaxSegmentID)
+
+
+def response2 = WS.sendRequestAndVerify(findTestObject('BA/OW-1ADT/XML/OfferPrice-XML',
+	[('Token') : Result1.IATA_AirShoppingRS.PayloadAttributes.EchoTokenText.__text,
+	('OfferId'): Result1.IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[0].OfferID.__text,
+	('OfferItemID'):  Result1.IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[0].OfferItem.OfferItemID.__text,
+	('PAXJOURNEY'): Result1.IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[1].JourneyOverview.JourneyPriceClass.PaxJourneyRefID.__text,
+	('Shopping'): Result1.IATA_AirShoppingRS.Response.ShoppingResponse.ShoppingResponseID.__text,
+	('Amount'): Result1.IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[0].OfferItem.Price.TotalAmount.__text,
+	('OwnerCode'): Result1.IATA_AirShoppingRS.Response.DataLists.PaxSegmentList.PaxSegment[0].MarketingCarrierInfo.CarrierDesigCode.__text]))
+
+WS.verifyResponseStatusCode(response2, 200)
+println (XmlUtil.serialize(response2.getResponseBodyContent()))
+
+/**
+('PAXJOURNEY').IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[1].JourneyOverview.JourneyPriceClass.PaxJourneyRefID.__text "Flight2_BA1385"
+('Amount').IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[0].OfferItem.Price.TotalAmount.__text "62.85"
+('OfferItemID') .IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[0].OfferItem.OfferItemID.__text "OF-ba45be8b-1e95-4d24-ba3e-a67e08f10fc1-OI-1"
+('OfferId').IATA_AirShoppingRS.Response.OffersGroup.CarrierOffers.Offer[0].OfferID.__text "OF-ba45be8b-1e95-4d24-ba3e-a67e08f10fc1"
+('OwnerCode').IATA_AirShoppingRS.Response.DataLists.PaxSegmentList.PaxSegment[0].MarketingCarrierInfo.CarrierDesigCode.__text	"BA"
+('Shopping').IATA_AirShoppingRS.Response.ShoppingResponse.ShoppingResponseID.__text	"ac2.tx-pl-751873cc-3d23-4518-aa22-bd2d7e885d42"
+('Token').IATA_AirShoppingRS.PayloadAttributes.EchoTokenText.__text	"cb6ac596-3f4a-4b1f-ac3f-bd4b01e3bda4" **/
+
+
